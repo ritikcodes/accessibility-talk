@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>A11y - It's a right.</title>
+    <style>
+      .card {
+        color: rgb(51, 65, 85);
+        border: 1px solid rgb(226, 232, 240);
+        border-radius: 4px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+        height: 100px;
+        width: 500px;
+        margin-bottom: 20px;
+      }
+
+      .card:focus,
+      .card:hover {
+        color: rgb(51, 65, 85);
+        border: 1px solid rgb(165, 150, 253);
+        background: rgb(248, 245, 255);
+      }
+
+      button {
+        border: none;
+        background: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Module 2 : Keyboard a11y</h1>
+    <p>
+      <b>Desktop</b> : Try hitting <b>tab</b> and hit enter. You should see
+      <b>bingo!</b> on hitting enter.
+    </p>
+    <div>
+      <button onclick="run()" class="card">Option A</button>
+    </div>
+    <div class="card" role="button" onclick="run()">
+      <div>Option B</div>
+    </div>
+    <div class="card" onclick="run()">
+      <div>Option C</div>
+    </div>
+    <div class="card" tabindex="0" onclick="run()">
+      <div>Option D</div>
+    </div>
+
+    <script>
+      function run() {
+        alert("bingo!");
+      }
+    </script>
+  </body>
+</html>
